@@ -1,5 +1,8 @@
 package com.expense.enums;
 
+import com.expense.expection.ExceptionType;
+import com.expense.expection.ExpenseException;
+
 public enum BillTypes {
     CAR("CAR"),
     GROCERIES("GROCERIES"),
@@ -25,6 +28,10 @@ public enum BillTypes {
     }
 
     public static BillTypes getEnumValue(String value){
-        return Enum.valueOf(BillTypes.class, value);
+        try{
+            return Enum.valueOf(BillTypes.class, value);
+        }catch (Exception e){
+            throw new ExpenseException(ExceptionType.VALIDATION_EXCEPTION, String.format("Not a valid enum value %s", value));
+        }
     }
 }
