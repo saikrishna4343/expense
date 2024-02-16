@@ -23,10 +23,6 @@ public class UserVO {
     private String userLastName;
     @NotNull(message = "Missing Email")
     private String userEmail;
-    @NotNull(message = "Missing Phone Number")
-    private BigInteger userPhoneNumber;
-    @NotNull(message = "Missing Phone Number Country Code")
-    private BigInteger userCountryPhoneCode;
     @NotNull(message = "Missing Country")
     private String userCountry;
     @NotNull(message = "Missing Date Of Birth")

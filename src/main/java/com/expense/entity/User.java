@@ -24,8 +24,6 @@ public class User extends BaseEntity{
     private String userFirstName;
     private String userLastName;
     private String userEmail;
-    private BigInteger userPhoneNumber;
-    private BigInteger userCountryPhoneCode;
     private String userCountry;
     private Date userDateOfBirth;
     private char userStatus;

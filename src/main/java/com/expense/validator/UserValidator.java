@@ -16,9 +16,9 @@ public class UserValidator implements ExpenseValidator<UserVO> {
 
     UserRepository userRepository;
     public void validateNewUser(UserVO userVO){
-        Optional<User> optionalUser = userRepository.findByUserEmailOrUserPhoneNumber(userVO.getUserEmail(), userVO.getUserPhoneNumber());
+        Optional<User> optionalUser = userRepository.findByUserEmail(userVO.getUserEmail());
         if(optionalUser.isPresent()){
-            throw new ExpenseException(ExceptionType.VALIDATION_EXCEPTION, String.format("User with email %s or with phone number %s already present", userVO.getUserEmail(), userVO.getUserPhoneNumber()));
+            throw new ExpenseException(ExceptionType.VALIDATION_EXCEPTION, String.format("User with email %s", userVO.getUserEmail()));
         }
     }
 }
